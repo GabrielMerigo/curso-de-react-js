@@ -5,6 +5,7 @@ class Equipe extends Component {
     return (
       <div>
         <h2>Olá {this.props.name} </h2>
+        <h2>Seu cargo é {this.props.cargo}</h2>
       </div>
     )
   }
@@ -14,7 +15,7 @@ function App () {
   return (
     <div>
       <h2>Conheça a nossa equipe</h2>
-      <Equipe name="Gabriel"/>
+      <Equipe name="Gabriel" cargo="Programador"/>
     </div>
   )
 }
