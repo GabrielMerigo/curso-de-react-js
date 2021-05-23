@@ -15,7 +15,7 @@ function App () {
   return (
     <div>
       <h2>Conheça a nossa equipe</h2>
-      <Equipe name="Gabriel" cargo="Programador"/>
+      <Equipe name="Gabriel" cargo="Programador" idade="18"/>
     </div>
   )
 }
