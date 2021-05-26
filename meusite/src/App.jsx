@@ -25,14 +25,15 @@ class App extends Component {
   }
 
   cadastrar(e){
-    if(!Boolean(this.state.nome) || !Boolean(this.state.email) || !Boolean(this.state.email)){
+    const {nome, email, senha} = this.state
+    e.preventDefault()
+
+    if(!nome || !email || !senha){
       alert('por favor, preencha todos os dados.')
-      e.preventDefault()
       return false
     }
 
-    alert(
-      `Dados inseridos no banco de dados -
+    alert(`Dados inseridos no banco de dados -
        Nome: ${this.state.nome}
        E-mail: ${this.state.email}
        Senha: ${this.state.senha}`
