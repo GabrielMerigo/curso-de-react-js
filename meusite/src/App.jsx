@@ -15,11 +15,10 @@ function App() {
     localStorage.setItem('tarefas', JSON.stringify(tarefas))
   }, [tarefas])
 
-  function adicionarTarefa(){
+  const adicionarTarefa = useCallback(() => {
     setTarefas([...tarefas, input])
-    setInput('')
-  }
-
+  }, [input, tarefas])
+  
   const totalTarefas = useMemo(() => `${tarefas.length}`, [tarefas])
 
   return (
