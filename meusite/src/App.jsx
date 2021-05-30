@@ -1,33 +1,8 @@
-import { React, useEffect, useState, useMemo, useCallback } from 'react'
+import Routes from './routes'
 
-function App() {
-  const [tarefas, setTarefas] = useState([]);
-  const [input, setInput] = useState('')
-
-  useEffect(() => {
-    const tarefasStorage = localStorage.getItem('tarefas')
-    if(tarefasStorage){
-      setTarefas(JSON.parse(tarefasStorage))
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('tarefas', JSON.stringify(tarefas))
-  }, [tarefas])
-
-  const adicionarTarefa = useCallback(() => {
-    setTarefas([...tarefas, input])
-  }, [input, tarefas])
-  
-  const totalTarefas = useMemo(() => `${tarefas.length}`, [tarefas])
-
+function App () {
   return (
-    <>
-      <ul>{tarefas.map((tarefa) => <li key={tarefa}>{tarefa}</li>)}</ul>
-      <input type="text" value={input} onChange={e => setInput(e.target.value)}/>
-      <button type="button" onClick={adicionarTarefa}>Adicionar Tarefa</button>
-      <h1>Você tem {totalTarefas}</h1>
-    </>
+    <Routes/>
   )
 }
 
