@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Sobre from './pages/Sobre'
 import Contato from './pages/Contato'
 import Header from './components/Header'
+import Erro from './pages/Erro'
 
 const Routes = () => {
   return (
@@ -10,8 +11,9 @@ const Routes = () => {
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/sobre" component={Sobre} />
-        <Route path="/contato" component={Contato} />
+        <Route exact path="/sobre" component={Sobre} />
+        <Route exact path="/contato" component={Contato} />
+        <Route exact path="*" component={Erro} />
       </Switch>
     </BrowserRouter>
   )
